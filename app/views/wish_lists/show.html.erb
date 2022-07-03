@@ -15,7 +15,7 @@
     </tr>
     <% @wish_list.wish_items.each do |wish_item| %>
       <tr>
-        <td><%= @wish_list.description %></td>
+        <td><%= wish_item.description %></td>
         <td><a target="_blank" href="<%= wish_item.link %>"><%= wish_item.link %></a></td>
         <td><%= wish_item.completed %></td>
         <td><%= wish_item.completed_at.strftime("%d.%m.%Y: %H:%M Uhr") %></td>
