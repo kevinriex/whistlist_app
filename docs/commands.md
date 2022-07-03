@@ -9,4 +9,5 @@ rails db:migrate
 
 ## Changes
 rails g migration ChangeReferenceWishItem
+rails destroy scaffold WishList
 rails destroy nested_scaffold WishList/WishItem
