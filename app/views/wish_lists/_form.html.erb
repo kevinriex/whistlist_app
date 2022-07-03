@@ -1,7 +1,8 @@
 <%= form_with(model: wish_list) do |form| %>
   <% if wish_list.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(wish_list.errors.count, "error") %> prohibited this wish_list from being saved:</h2>
+      <h2><%= pluralize(wish_list.errors.count, "error") %>
+        prohibited this wish_list from being saved:</h2>
 
       <ul>
         <% wish_list.errors.each do |error| %>
@@ -14,6 +15,10 @@
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
   </div>
 
   <div>

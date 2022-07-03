@@ -25,7 +25,7 @@ class WishListsController < ApplicationController
 
     respond_to do |format|
       if @wish_list.save
-        format.html { redirect_to wish_list_url(@wish_list), notice: "Wish list was successfully created." }
+        format.html { redirect_to wish_list_url(@wish_list), notice: "Wunschliste wurde erfolgreich erstellt." }
         format.json { render :show, status: :created, location: @wish_list }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class WishListsController < ApplicationController
   def update
     respond_to do |format|
       if @wish_list.update(wish_list_params)
-        format.html { redirect_to wish_list_url(@wish_list), notice: "Wish list was successfully updated." }
+        format.html { redirect_to wish_list_url(@wish_list), notice: "Wunschliste wurde erfolgreich verändert." }
         format.json { render :show, status: :ok, location: @wish_list }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class WishListsController < ApplicationController
     @wish_list.destroy
 
     respond_to do |format|
-      format.html { redirect_to wish_lists_url, notice: "Wish list was successfully destroyed." }
+      format.html { redirect_to wish_lists_url, notice: "Wunschliste wurde erfolgreich gelöscht." }
       format.json { head :no_content }
     end
   end
@@ -65,6 +65,6 @@ class WishListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wish_list_params
-      params.require(:wish_list).permit(:title)
+      params.require(:wish_list).permit(:title, :description)
     end
 end

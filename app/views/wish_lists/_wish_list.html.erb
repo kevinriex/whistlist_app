@@ -1,17 +1,6 @@
-<div id="<%= dom_id wish_list %>">
-  <p>
-    <strong>Title:</strong>
-    <%= wish_list.title %>
-  </p>
-    <ul>
-    <% wish_list.wish_items.each do |wish_item| %>
-      <li><%= wish_item.description %></li>
-      <li><%= wish_item.link %></li>
-      <li><%= wish_item.completed %></li>
-      <li><%= wish_item.completed_at %></li>
-      <li><%= wish_item.created_at %></li>
-      <li><%= wish_item.updated_at %></li>
-    <% end %>
-  </ul>
-
+<div class="card ml-8">
+  <div class="card-header">
+    <h2><%= link_to wish_list.title, wish_list %></h2>
+  </div>
+  <p class="card-text"><%= wish_list.description %></p>
 </div>

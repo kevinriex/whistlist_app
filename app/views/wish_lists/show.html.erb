@@ -1,10 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @wish_list %>
+<div class="card-header">
+  <h1><%= @wish_list.title %></h1>
+  <p class="card-text"><%= @wish_list.description %></p>
+</div>
+<table class="list-group">
+    <tr>
+      <th>Beschreibung</th>
+      <th>Link</th>
+      <th>Erledigt?</th>
+      <th>Erledigt am</th>
+      <th>Erstellt am</th>
+      <th>Letzte Änderung</th>
+    </tr>
+    <% @wish_list.wish_items.each do |wish_item| %>
+      <tr>
+        <td><%= @wish_list.description %></td>
+        <td><a target="_blank" href="<%= wish_item.link %>"><%= wish_item.link %></a></td>
+        <td><%= wish_item.completed %></td>
+        <td><%= wish_item.completed_at.strftime("%d.%m.%Y: %H:%M Uhr") %></td>
+        <td><%= wish_item.created_at.strftime("%d.%m.%Y: %H:%M Uhr") %></td>
+        <td><%= wish_item.updated_at.strftime("%d.%m.%Y: %H:%M Uhr") %></td>
+        <td><%= link_to 'Edit', edit_wish_list_wish_item_path(wish_item.wish_list, wish_item) %></td>
+      </tr>
+    <% end %>
+</table>
 
 <div>
-  <%= link_to "Edit this wish list", edit_wish_list_path(@wish_list) %> |
-  <%= link_to "Back to wish lists", wish_lists_path %>
+  <%= link_to "Bearbeiten", edit_wish_list_path(@wish_list) %>
+  |
+  <%= link_to "Zurück", wish_lists_path %>
 
-  <%= button_to "Destroy this wish list", @wish_list, method: :delete %>
+  <%= button_to "Liste löschen", @wish_list, method: :delete %>
 </div>
