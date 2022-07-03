@@ -1,0 +1,22 @@
+<%= form_with(model: whish_list) do |form| %>
+  <% if whish_list.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(whish_list.errors.count, "error") %> prohibited this whish_list from being saved:</h2>
+
+      <ul>
+        <% whish_list.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
