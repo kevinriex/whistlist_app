@@ -10,26 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_03_154803) do
-  create_table "whish_lists", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_07_03_161637) do
+  create_table "wish_items", force: :cascade do |t|
+    t.text "description"
+    t.text "link"
+    t.boolean "completed"
+    t.datetime "completed_at"
+    t.integer "wish_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["wish_list_id"], name: "index_wish_items_on_wish_list_id"
+  end
+
+  create_table "wish_lists", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "wish_items", force: :cascade do |t|
-    t.integer "wish_list_id", null: false
-    t.text "description"
-    t.text "link"
-    t.boolean "completed"
-    t.datetime "completed_at"
-    t.integer "wishlist_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["wish_list_id"], name: "index_wish_items_on_wish_list_id"
-    t.index ["wishlist_id"], name: "index_wish_items_on_wishlist_id"
-  end
-
   add_foreign_key "wish_items", "wish_lists"
-  add_foreign_key "wish_items", "wishlists"
 end

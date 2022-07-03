@@ -1,6 +1,6 @@
 require "test_helper"
 
-class WhishListTest < ActiveSupport::TestCase
+class WishItemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

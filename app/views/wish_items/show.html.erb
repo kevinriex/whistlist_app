@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @wish_item.description %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @wish_item.link %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @wish_item.completed %>
+</p>
+
+<p>
+  <b>Completed at:</b>
+  <%= @wish_item.completed_at %>
+</p>
+
+<p>
+  <b>Wish list:</b>
+  <%= @wish_item.wish_list %>
+</p>
+
+
+<%= link_to 'Edit', edit_wish_list_wish_item_path(@wish_item.wish_list, @wish_item) %> |
+<%= link_to 'Back', wish_list_wish_items_path(@wish_item.wish_list) %>
