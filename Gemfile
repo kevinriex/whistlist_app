@@ -44,6 +44,8 @@ gem "bootsnap", require: false
 
 gem "nested_scaffold"
 
+gem "erb-formatter"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
