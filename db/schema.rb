@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_03_161637) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_03_171216) do
   create_table "wish_items", force: :cascade do |t|
     t.text "description"
-    t.text "link"
+    t.string "link"
     t.boolean "completed"
     t.datetime "completed_at"
     t.integer "wish_list_id", null: false
