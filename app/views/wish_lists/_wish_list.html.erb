@@ -3,5 +3,15 @@
     <strong>Title:</strong>
     <%= wish_list.title %>
   </p>
+    <ul>
+    <% wish_list.wish_items.each do |wish_item| %>
+      <li><%= wish_item.description %></li>
+      <li><%= wish_item.link %></li>
+      <li><%= wish_item.completed %></li>
+      <li><%= wish_item.completed_at %></li>
+      <li><%= wish_item.created_at %></li>
+      <li><%= wish_item.updated_at %></li>
+    <% end %>
+  </ul>
 
 </div>
